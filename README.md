@@ -14,7 +14,7 @@ A React-based file visualizer that supports common 3D models, text files, images
 
 - [ ] Add full supported extension list.
 - [x] Add teaser.
-- [x] Add quick start and what if port collide.
+- [x] Add quick start.
 
 ## Quick Start
 
