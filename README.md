@@ -18,8 +18,8 @@ A React-based file visualizer that supports common 3D models, text files, images
 
 ## Quick Start
 
-`Remote` -> Machine you want to visualize on.\
-`Local` -> Machine you want to see the visualization, could be the same as Remote.
+`Remote` → Machine you want to visualize on.\
+`Local` → Machine you want to see the visualization, could be the same as Remote.
 
 1. `Remote` Clone this repo to the machine that you want to visualize.
 ```bash
