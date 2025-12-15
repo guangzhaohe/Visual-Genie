@@ -4,8 +4,10 @@
 
 ## Overview
 
-<img src=assets/teaser.png> </img>
-
+<div align="center">
+    <img width=80% src=assets/teaser.png>
+    </img>
+</div>
 A React-based file visualizer that supports common 3D models, text files, images/videos and more.
 
 ## Todo
