@@ -1,0 +1,10 @@
+{
+    "system": "Unicorn Viz",
+    "version": 4.0,
+    "modules": [
+        "render",
+        "styles",
+        "utils"
+    ],
+    "gpu_enabled": true
+}

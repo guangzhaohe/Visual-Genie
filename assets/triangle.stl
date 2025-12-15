@@ -1,0 +1,11 @@
+solid verified_pyramid
+
+facet normal 0.707 0 0.707
+  outer loop
+    vertex 1 -1 0   // P2
+    vertex 1 1 0    // P3
+    vertex 0 0 1    // Apex
+  endloop
+endfacet
+
+endsolid verified_pyramid

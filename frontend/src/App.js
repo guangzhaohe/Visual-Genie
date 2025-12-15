@@ -225,7 +225,7 @@ function GltfModel({ url, setStats }) {
 function StandardModel({ url, loader, setStats }) {
   const object = useLoader(loader, url);
   const mesh = useMemo(() => {
-    if (object.isBufferGeometry) return new THREE.Mesh(object, new THREE.MeshStandardMaterial({ color: '#2b85e4' }));
+    if (object.isBufferGeometry) return new THREE.Mesh(object, new THREE.MeshStandardMaterial({ color: '#2b85e4', metalness: 0.3, roughness: 0.7, side: THREE.DoubleSide }));
     return object;
   }, [object]);
   useEffect(() => { if (mesh) setStats(calculateStats(mesh)); }, [mesh, setStats]);
@@ -245,7 +245,7 @@ function OffModel({ url, setStats }) {
   if (!geometry) return null;
   return (
     <mesh geometry={geometry}>
-      <meshStandardMaterial color="#2b85e4" side={THREE.DoubleSide} />
+      <meshStandardMaterial color="#2b85e4" metalness={0.5} roughness={0.5} side={THREE.DoubleSide} />
     </mesh>
   );
 }
@@ -264,19 +264,17 @@ function MeshViewer({ url, ext }) {
   }, [ext, isGltf, isOff]);
 
   return (
-    <div className="w-full h-64 relative bg-gray-900 rounded overflow-hidden">
-      <div className="absolute top-2 left-2 z-10 bg-black/50 backdrop-blur text-[10px] p-2 rounded border border-gray-700 font-mono text-green-400 pointer-events-none select-none">
-        <div>VERTS: {stats.verts.toLocaleString()}</div>
-        <div>FACES: {stats.faces.toLocaleString()}</div>
+    <div className="w-full h-64 relative bg-gray-950 rounded overflow-hidden">
+      <div className="absolute top-2 left-2 z-10 bg-black/50 backdrop-blur text-[10px] p-1 rounded font-mono text-gray-400 pointer-events-none select-none">
+        <div>v: {stats.verts.toLocaleString()} | f: {stats.faces.toLocaleString()}</div>
       </div>
 
       <Canvas shadows dpr={[1, 2]} camera={{ fov: 45, position: [0, 0, 10] }}> {/* Move camera back initially */}
         <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={300}/>
         <Environment preset="city" />
 
-        {/* FIX: Bounds with margin > 1 adds padding (makes model appear smaller) */}
-        <Bounds fit clip observe margin={2.0}>
+        <Bounds fit clip observe margin={1.3}>
           <Center>
             <Suspense fallback={null}>
               {isGltf ? <GltfModel url={url} setStats={setStats} /> :

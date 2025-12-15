@@ -1,0 +1,5 @@
+<config>
+    <mode>dark</mode>
+    <render>opengl</render>
+    <max_polygons>50000</max_polygons>
+</config>
