@@ -47,4 +47,4 @@ ssh -L 8000:localhost:8000 abc123@node-01
 
 5. `Local` Open your local browser and go to the forwarded port, possibly something like `localhost:8000` (if the remote port was forwarded to local `:8000` port).
 
-6. (Optional) `Local` If the forwarded port was not `:8000`, go to the settings menu on the website, and change port accordingly.
+6. `Local` (Optional) If the forwarded port was not `:8000`, go to the settings menu on the website, and change port accordingly.
