@@ -36,7 +36,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-4. `Remote` Forward server port to local machine via SSH.
+4. `Local` Forward server port to local machine via SSH.
 ```bash
 ssh -L LOCAL_PORT:localhost:REMOTE_HOST USER@SSH_HOST 
 ```
